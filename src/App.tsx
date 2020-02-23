@@ -80,6 +80,7 @@ export default function App(props:any) {
   const handleClick = (event:any,val:number) =>{
     const barData:any = [...bars]
     barData[selected].progress =  barData[selected].progress + val;
+    if(barData[selected].progress < 0) barData[selected].progress = 0;
     setBars(barData);
   }
   return (
